@@ -19,31 +19,30 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.21.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="在现代商业运作中，构建一个高效的供应链是企业成功的决定性因素之一。在这庞大而错综复杂的供应链网络中，仓储管理显然是至关重要的环节。不论是制造业、零售业，还是电子商务，都必须通过严密的仓储计划和高效的出库管理来确保产品的流通畅顺，以满足不断增长的市场需求。仓储管理远非简单的产品存储和分发，而是一门科学、一项精密的艺术。仓储环节主要分为库存深度管理和出入库管理，由于库存管理已在前文深入介绍，因此本部">
+    <meta name="description" content="背景&nbsp;&nbsp;商品价格作为零售中最重要的决策环节, 对整个零售业务无论是GMV还是毛利率都有重要的影响。与此同时，传统的业务流程中，除了部分头部品是标定竞对的定价之外，大部分的场景下都是成本定价。在智能化的运营中，我们经常基于用户的对不同价格点的反馈进行商品定价。定型来说，对于部分用户价格不敏感的商品，我们倾向于定比较高的价格，以获得毛利的收益。对于用于价格敏感高的商品，我们制定低价">
 <meta property="og:type" content="article">
-<meta property="og:title" content="仓储管理中的AI机会点">
-<meta property="og:url" content="http://example.com/2024/10/07/%E4%BB%93%E5%82%A8%E7%AE%A1%E7%90%86%E4%B8%AD%E7%9A%84AI%E6%9C%BA%E4%BC%9A%E7%82%B9/index.html">
+<meta property="og:title" content="智能定价算法_一个简单的定价Demo">
+<meta property="og:url" content="http://example.com/2024/11/10/%E6%99%BA%E8%83%BD%E5%AE%9A%E4%BB%B7%E7%AE%97%E6%B3%95-%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E5%AE%9A%E4%BB%B7Demo/index.html">
 <meta property="og:site_name" content="Yestin小站">
-<meta property="og:description" content="在现代商业运作中，构建一个高效的供应链是企业成功的决定性因素之一。在这庞大而错综复杂的供应链网络中，仓储管理显然是至关重要的环节。不论是制造业、零售业，还是电子商务，都必须通过严密的仓储计划和高效的出库管理来确保产品的流通畅顺，以满足不断增长的市场需求。仓储管理远非简单的产品存储和分发，而是一门科学、一项精密的艺术。仓储环节主要分为库存深度管理和出入库管理，由于库存管理已在前文深入介绍，因此本部">
+<meta property="og:description" content="背景&nbsp;&nbsp;商品价格作为零售中最重要的决策环节, 对整个零售业务无论是GMV还是毛利率都有重要的影响。与此同时，传统的业务流程中，除了部分头部品是标定竞对的定价之外，大部分的场景下都是成本定价。在智能化的运营中，我们经常基于用户的对不同价格点的反馈进行商品定价。定型来说，对于部分用户价格不敏感的商品，我们倾向于定比较高的价格，以获得毛利的收益。对于用于价格敏感高的商品，我们制定低价">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://s3.bmp.ovh/imgs/2024/10/19/12bfaf923f375ac4.png">
-<meta property="article:published_time" content="2024-10-07T08:36:20.000Z">
-<meta property="article:modified_time" content="2024-10-19T13:17:33.106Z">
+<meta property="article:published_time" content="2024-11-10T09:04:33.000Z">
+<meta property="article:modified_time" content="2024-11-10T13:56:51.988Z">
 <meta property="article:author" content="Yestin">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="供应链">
+<meta property="article:tag" content="智能定价">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s3.bmp.ovh/imgs/2024/10/19/12bfaf923f375ac4.png">
 
 
-<link rel="canonical" href="http://example.com/2024/10/07/%E4%BB%93%E5%82%A8%E7%AE%A1%E7%90%86%E4%B8%AD%E7%9A%84AI%E6%9C%BA%E4%BC%9A%E7%82%B9/">
+<link rel="canonical" href="http://example.com/2024/11/10/%E6%99%BA%E8%83%BD%E5%AE%9A%E4%BB%B7%E7%AE%97%E6%B3%95-%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E5%AE%9A%E4%BB%B7Demo/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2024/10/07/%E4%BB%93%E5%82%A8%E7%AE%A1%E7%90%86%E4%B8%AD%E7%9A%84AI%E6%9C%BA%E4%BC%9A%E7%82%B9/","path":"2024/10/07/仓储管理中的AI机会点/","title":"仓储管理中的AI机会点"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2024/11/10/%E6%99%BA%E8%83%BD%E5%AE%9A%E4%BB%B7%E7%AE%97%E6%B3%95-%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E5%AE%9A%E4%BB%B7Demo/","path":"2024/11/10/智能定价算法-一个简单的定价Demo/","title":"智能定价算法_一个简单的定价Demo"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>仓储管理中的AI机会点 | Yestin小站</title>
+<title>智能定价算法_一个简单的定价Demo | Yestin小站</title>
   
 
 
@@ -103,7 +102,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -116,6 +115,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8F%E4%BB%B7%E5%85%B3%E7%B3%BB%E5%BB%BA%E6%A8%A1"><span class="nav-number">2.</span> <span class="nav-text">量价关系建模</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%BB%B7%E7%BB%93%E6%9E%9C%E5%86%B3%E7%AD%96"><span class="nav-number">3.</span> <span class="nav-text">定价结果决策</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E5%A4%9A%E8%A6%81%E8%AF%B4%E7%9A%84%E8%AF%9D"><span class="nav-number">4.</span> <span class="nav-text">更多要说的话</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -139,7 +139,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -171,7 +171,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/10/07/%E4%BB%93%E5%82%A8%E7%AE%A1%E7%90%86%E4%B8%AD%E7%9A%84AI%E6%9C%BA%E4%BC%9A%E7%82%B9/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/11/10/%E6%99%BA%E8%83%BD%E5%AE%9A%E4%BB%B7%E7%AE%97%E6%B3%95-%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E5%AE%9A%E4%BB%B7Demo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -184,12 +184,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="仓储管理中的AI机会点 | Yestin小站">
+      <meta itemprop="name" content="智能定价算法_一个简单的定价Demo | Yestin小站">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          仓储管理中的AI机会点
+          智能定价算法_一个简单的定价Demo
         </h1>
 
         <div class="post-meta-container">
@@ -199,15 +199,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2024-10-07 16:36:20" itemprop="dateCreated datePublished" datetime="2024-10-07T16:36:20+08:00">2024-10-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-10-19 21:17:33" itemprop="dateModified" datetime="2024-10-19T21:17:33+08:00">2024-10-19</time>
+      <time title="创建时间：2024-11-10 17:04:33 / 修改时间：21:56:51" itemprop="dateCreated datePublished" datetime="2024-11-10T17:04:33+08:00">2024-11-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -235,22 +229,9 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p><img src="https://s3.bmp.ovh/imgs/2024/10/19/12bfaf923f375ac4.png"></p>
-<p>在现代商业运作中，构建一个高效的供应链是企业成功的决定性因素之一。在这庞大而错综复杂的供应链网络中，仓储管理显然是至关重要的环节。不论是制造业、零售业，还是电子商务，都必须通过严密的仓储计划和高效的出库管理来确保产品的流通畅顺，以满足不断增长的市场需求。仓储管理远非简单的产品存储和分发，而是一门科学、一项精密的艺术。仓储环节主要分为库存深度管理和出入库管理，由于库存管理已在前文深入介绍，因此本部分将重点关注于仓储管理中的出入库管理。</p>
-<p>出入库管理是电商仓库运营的核心环节，覆盖了产品进入和离开仓库的整个过程。具体而言，入库管理负责接收、验收、分类和存储新到货的产品，而出库管理则包括从仓库中选择、拣选、包装和发运产品到客户的全过程。这一管理流程对于确保仓库内货物的有序、高效流通至关重要。有效的出库管理不仅能提高企业的运营效率、降低成本，还能增强客户满意度，树立卓越商业声誉。接下来，我们将深入探讨出库管理的关键性，并探讨如何通过技术手段实现最优化。</p>
-<span id="more"></span>
-
-<p>在当今仓储管理领域，人工智能算法正逐渐崭露头角，成为提升效率和降低成本的强大工具，为出入库管理赋予了全新的智能化元素。这一趋势的兴起源于人工智能技术在仓储领域的深度融合，为仓库操作提供了更为智能、高效的解决方案。在本文中，我们将深入探讨人工智能算法在仓库的出入库管理中的八个关键场景和价值点。</p>
-<p>首先，我们将探讨履约策略的动态决策，含前置切箱和择配算法。这一算法通过智能化的箱子切割和择配过程，实现对不同产品的最优组合，旨在最大程度地减小运输成本和提高包材存利用率。</p>
-<p>其次，我们将聚焦于智能波次和拣选优化。通过智能波次规划，系统能够合理组织出库订单，提高拣选效率，减少工作人员行走时间，从而降低拣选成本。这一场景将展示人工智能如何在大规模订单处理中发挥重要作用，实现高效的出库流程。</p>
-<p>接下来，我们将深入研究智能仓储布局和上架建议。算法通过对产品销售数据、流通频率等信息的分析，提供最优的仓储布局建议，确保热门商品更容易访问，从而进一步提高出库效率和减少人工上架的成本。</p>
-<p>第四，作业人员智能管理成为关注的焦点。通过对作业人员的实时监控、智能调度和复盘分析，系统可以更好地协调和管理作业人员的工作，提高人力资源的利用效率，</p>
-<p>第五，仓库操作的异常情况也得到了重视。异常检测和预警通过实时监测仓库操作和库存状态，能够迅速识别异常情况并发出预警，有助于及时应对问题，确保仓库的安全和正常运营。</p>
-<p>第六，视觉识别和自动化设备的应用使得仓库操作更加智能化。通过视觉识别技术，系统实现对货物的自动处理，搭配自动化设备，如机器人、AGV等，提高了仓库作业的精度和速度，减少了人为差错。</p>
-<p>第七，仓运协同进一步将智能化的仓库环节延伸至供应链各个节点，通过协同优化提高了整体运作效率，降低了运输成本，实现了供应链的高度协同。</p>
-<p>最后，仓储生产策略仿真则为决策者提供了科学依据。通过模拟不同的仓储生产策略，评估其对仓库运营效果的影响，使决策者能够在实际操作中做出更为明智的选择。</p>
-<p>这些场景相互衔接，构建了一个高度智能化、协同化的仓库管理体系，为企业提供了强大的工具，帮助其应对市场变化、提高运营效率、降低成本，实现在激烈竞争中的持续发展。在接下来的讨论中，我们将深入每一场景，揭示其独特的算法和技术应用，以及所带来的实际价值。</p>
-
+    <div class="post-body" itemprop="articleBody"><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>&nbsp;&nbsp;商品价格作为零售中最重要的决策环节, 对整个零售业务无论是GMV还是毛利率都有重要的影响。<br>与此同时，传统的业务流程中，除了部分头部品是标定竞对的定价之外，大部分的场景下都是成本定价。在智能化的运营中，<br>我们经常基于用户的对不同价格点的反馈进行商品定价。定型来说，对于部分用户价格不敏感的商品，我们倾向于定比较高的价格，以获得毛利的收益<br>。对于用于价格敏感高的商品，我们制定低价以获得价格的竞争力。下文中，本文构建了一个简单的货盘定价demo，揭示如何通过历史数据的反馈构建量价关系，<br>并基于每一个品的量价关系，制定货盘在指定毛利率水位下的商品定价结果。</p>
+<h2 id="量价关系建模"><a href="#量价关系建模" class="headerlink" title="量价关系建模"></a>量价关系建模</h2><p>&nbsp;&nbsp;量价关系建模本质上是通过对同一个商品，在历史中不同价格点下的销量结果，基于简单或者复杂的模型，进行结果的建模，以预测在更多价格点下的销量情况。<br>该阶段可以用简单的核函数回归，如指数核函、sigmod核函数，也可以整个货盘通盘考虑，构建深度模型去建模。本文作为基础版，直接采用指数模型进行建模，并不考虑可能的数据预处理情况。其核函数如下：</p>
+<h2 id="定价结果决策"><a href="#定价结果决策" class="headerlink" title="定价结果决策"></a>定价结果决策</h2><h2 id="更多要说的话"><a href="#更多要说的话" class="headerlink" title="更多要说的话"></a>更多要说的话</h2>
     </div>
 
     
@@ -261,6 +242,7 @@
           <div class="post-tags">
               <a href="/tags/AI/" rel="tag"># AI</a>
               <a href="/tags/%E4%BE%9B%E5%BA%94%E9%93%BE/" rel="tag"># 供应链</a>
+              <a href="/tags/%E6%99%BA%E8%83%BD%E5%AE%9A%E4%BB%B7/" rel="tag"># 智能定价</a>
           </div>
 
         
